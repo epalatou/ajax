@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<!--Source - W3Schools
+Template with INSTRUCTIONS & COMMENTS (use upon Guidance)
+Programming task for Dr. William Hudson - As part of the course 
+"Dynamic User Experience: Design and Usability", 
+implementing AJAX language
+Post Date: January 4th, 2021
+Copyright (c) 2022 evanthia palatou
+Improved Versions: https://newbedev.com/--> 
+<html>
+<head>
+<style>
+#div1 {
+  width: 550px;
+  height: 250px;
+  padding: 10px;
+  border: 8px dotted;
+  margin: auto;
+  margin-top: 10px;
+}
+#div2 {
+  width: 550px;
+  height: 120px;
+  padding: 20px;
+  border: 2px dotted;
+  margin: auto;
+  margin-top: 5px;
+}
+    h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+  font-family: sans-serif;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: right;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  cursor: pointer;
+}
+.button1 {background-color: #008CBA;} /* Blue */
+</style>
+    
+<script>
+//step 1 - allow Drop Function using mouse-->
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+//step 2 - allow Drag Function using mouse-->
+function drag(ev) {
+  ev.dataTransfer.setData("text/plain", ev.target.id);
+}
+//step 3 - Drop Function indicates the exact mouse Location-->
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text/plain");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+
+<body>
+<!--step 4 - Provide cursor feedback, helping user understand the point of the task
+<p>Drag & Drop exercise: Click on the image, transfer inside the Rectangle</p>-->
+        <p align="center">
+            <button class="button button1" value="click me">Post Items to my e-mail account</button>
+        </p>
+<!--step 5 - event call updates DOM that movement has been completed-->
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" >
+        <h1>Drop Files Here!</h1>
+    </div>
+<br>
+<!-- step 6 - Is there any further action to be taken?-->
+<!-- step 7 - The imahe to be used -->    
+<div id="div2" ondrop="" ondragover="" > 
+    <img id="drag1" src="img-1.jpg" draggable="true" ondragstart="drag(event)" width="80" height="80" alt="Click and Move inside the box">
+     <img id="drag2" src="img-2.jpg" draggable="true" ondragstart="drag(event)" width="80" height="80" alt="Click and Move inside the box">
+    <img id="drag3" src="img-3.jpg" draggable="true" ondragstart="drag(event)" width="80" height="80" alt="Click and Move inside the box">
+     <img id="drag4" src="img-4.jpg" draggable="true" ondragstart="drag(event)" width="80" height="80" alt="Click and Move inside the box">
+     <img id="drag5" src="img-5.jpg" draggable="true" ondragstart="drag(event)" width="80" height="80" alt="Click and Move inside the box">
+    </div>
+</body>
+</html>
+
