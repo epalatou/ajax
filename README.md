@@ -1,2 +1,2 @@
-# ajax
+# .ajax
 Drag and Drop snippet
